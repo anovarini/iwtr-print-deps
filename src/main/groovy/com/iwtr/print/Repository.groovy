@@ -43,7 +43,7 @@ class Repository {
         graph.shutdown()
     }
 
-    def graphFrom(def moduleName) {
+    def modulesGroupedByDistanceFrom(def moduleName) {
         def modulesGroup = [:]
         def fetchedModules = graph.V.filter {it.name == moduleName }
         if (fetchedModules.hasNext()) {

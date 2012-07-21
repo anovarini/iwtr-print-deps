@@ -47,7 +47,7 @@ private void printGraph(Repository repository, OptionAccessor options) {
     repository.init()
 
     def moduleName = options.arguments()[0]
-    def modulesGroup = repository.graphFrom(moduleName)
+    def modulesGroup = repository.modulesGroupedByDistanceFrom(moduleName)
 
     modulesGroup.each {
         modulesGroup[it.key] = it.value.collect {it.key}
